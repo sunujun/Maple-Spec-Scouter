@@ -1,10 +1,14 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { standardWidth, standardHeight, standardFontSize } from 'styles';
+import { RootStackParamList } from 'screens/RootStackParam';
+
+type MainScreenProp = StackNavigationProp<RootStackParamList, 'Main'>;
 
 const Main = () => {
-    const navigation = useNavigation();
+    const navigation = useNavigation<MainScreenProp>();
 
     return (
         <View style={styles.background}>
