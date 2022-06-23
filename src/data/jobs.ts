@@ -47,6 +47,161 @@ export enum Jobs {
     '키네시스',
 }
 
+export enum JobType {
+    '모험가',
+    '시그너스',
+    '레지스탕스',
+    '데몬',
+    '영웅',
+    '노바',
+    '레프',
+    '아니마',
+    '제로',
+    '키네시스',
+}
+
+export interface JobInfo {
+    type: JobType;
+}
+
+export const info: { [key in Jobs]: JobInfo } = {
+    [Jobs['히어로']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['팔라딘']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['다크나이트']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['아크메이지(불,독)']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['아크메이지(썬,콜)']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['비숍']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['보우마스터']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['신궁']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['패스파인더']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['나이트로드']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['섀도어']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['듀얼블레이드']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['바이퍼']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['캡틴']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['캐논슈터']]: {
+        type: JobType['모험가'],
+    },
+    [Jobs['소울마스터']]: {
+        type: JobType['시그너스'],
+    },
+    [Jobs['미하일']]: {
+        type: JobType['시그너스'],
+    },
+    [Jobs['플레임위자드']]: {
+        type: JobType['시그너스'],
+    },
+    [Jobs['윈드브레이커']]: {
+        type: JobType['시그너스'],
+    },
+    [Jobs['나이트워커']]: {
+        type: JobType['시그너스'],
+    },
+    [Jobs['스트라이커']]: {
+        type: JobType['시그너스'],
+    },
+    [Jobs['블래스터']]: {
+        type: JobType['레지스탕스'],
+    },
+    [Jobs['배틀메이지']]: {
+        type: JobType['레지스탕스'],
+    },
+    [Jobs['와일드헌터']]: {
+        type: JobType['레지스탕스'],
+    },
+    [Jobs['메카닉']]: {
+        type: JobType['레지스탕스'],
+    },
+    [Jobs['제논']]: {
+        type: JobType['레지스탕스'],
+    },
+    [Jobs['데몬슬레이어']]: {
+        type: JobType['데몬'],
+    },
+    [Jobs['데몬어벤져']]: {
+        type: JobType['데몬'],
+    },
+    [Jobs['아란']]: {
+        type: JobType['영웅'],
+    },
+    [Jobs['에반']]: {
+        type: JobType['영웅'],
+    },
+    [Jobs['루미너스']]: {
+        type: JobType['영웅'],
+    },
+    [Jobs['메르세데스']]: {
+        type: JobType['영웅'],
+    },
+    [Jobs['팬텀']]: {
+        type: JobType['영웅'],
+    },
+    [Jobs['은월']]: {
+        type: JobType['영웅'],
+    },
+    [Jobs['카이저']]: {
+        type: JobType['노바'],
+    },
+    [Jobs['카인']]: {
+        type: JobType['노바'],
+    },
+    [Jobs['카데나']]: {
+        type: JobType['노바'],
+    },
+    [Jobs['엔젤릭버스터']]: {
+        type: JobType['노바'],
+    },
+    [Jobs['아델']]: {
+        type: JobType['레프'],
+    },
+    [Jobs['일리움']]: {
+        type: JobType['레프'],
+    },
+    [Jobs['아크']]: {
+        type: JobType['레프'],
+    },
+    [Jobs['라라']]: {
+        type: JobType['아니마'],
+    },
+    [Jobs['호영']]: {
+        type: JobType['아니마'],
+    },
+    [Jobs['제로']]: {
+        type: JobType['제로'],
+    },
+    [Jobs['키네시스']]: {
+        type: JobType['키네시스'],
+    },
+};
+
 /** 직업별 기본 패시브 수치(주스탯, 주스탯%, 주스탯!, 부스탯, 부스탯%, 부스탯!, 공마, 공마퍼, 데미지, 보공, 최종뎀, 방무, 크확, 크뎀, 숙련도, 무기 상수) */
 export interface StatState {
     mainStat: number;
