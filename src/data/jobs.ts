@@ -47,6 +47,7 @@ export enum Jobs {
     '키네시스',
 }
 
+/** 직업 유형 */
 export enum JobType {
     '모험가',
     '시그너스',
@@ -60,10 +61,12 @@ export enum JobType {
     '키네시스',
 }
 
+/** 직업 정보 */
 export interface JobInfo {
     type: JobType;
 }
 
+/** 직업별 직업 정보 */
 export const info: { [key in Jobs]: JobInfo } = {
     [Jobs['히어로']]: {
         type: JobType['모험가'],
@@ -202,7 +205,7 @@ export const info: { [key in Jobs]: JobInfo } = {
     },
 };
 
-/** 직업별 기본 패시브 수치(주스탯, 주스탯%, 주스탯!, 부스탯, 부스탯%, 부스탯!, 공마, 공마퍼, 데미지, 보공, 최종뎀, 방무, 크확, 크뎀, 숙련도, 무기 상수) */
+/** 스탯 정보 (주스탯, 주스탯%, 주스탯!, 부스탯, 부스탯%, 부스탯!, 공마, 공마퍼, 데미지, 보공, 최종뎀, 방무, 크확, 크뎀, 숙련도, 무기 상수) */
 export interface StatState {
     mainStat: number;
     mainStatPercentage: number;
@@ -222,6 +225,7 @@ export interface StatState {
     weaponConstant: number;
 }
 
+/** 기본 패시브 수치 */
 export const basePassive: { [key in Jobs]: StatState } = {
     [Jobs['히어로']]: {
         mainStat: 50,

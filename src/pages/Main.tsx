@@ -1,15 +1,18 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { standardWidth, standardHeight, standardFontSize } from 'styles';
 
 const Main = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.background}>
             <View style={styles.mainTextView}>
                 <Text style={styles.mainText}>메이플스토리</Text>
                 <Text style={styles.mainText}>스텟 환산기</Text>
             </View>
-            <Pressable style={styles.startButton}>
+            <Pressable style={styles.startButton} onPress={() => navigation.navigate('SelectJob')}>
                 <Text style={styles.startText}>시작하기</Text>
             </Pressable>
         </View>
