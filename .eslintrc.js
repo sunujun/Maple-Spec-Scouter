@@ -7,7 +7,7 @@ module.exports = {
         {
             files: ['*.ts', '*.tsx'],
             rules: {
-                semi: ['error', 'always'],
+                'semi': ['error', 'always'],
                 '@typescript-eslint/no-shadow': ['error'],
                 'no-shadow': 'off',
                 'no-undef': 'off',
@@ -15,6 +15,7 @@ module.exports = {
                     'error',
                     {
                         endOfLine: 'auto',
+                        singleQuote: true,
                     },
                 ],
             },
