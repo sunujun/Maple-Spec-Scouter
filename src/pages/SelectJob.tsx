@@ -1,8 +1,43 @@
 import React from 'react';
-import { SectionList, StyleSheet, View } from 'react-native';
+import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { JobType } from 'data/jobs';
 
 const SelectJob = () => {
-    return <View style={styles.background}>{/* <SectionList /> */}</View>;
+    const jobTypes = Object.values(JobType)
+        .filter(key => typeof JobType[key as JobType] === 'number')
+        .map(key => ({ name: key }));
+    // const jobs = Object.values(info);
+
+    return (
+        <View style={styles.background}>
+            <FlatList
+                data={jobTypes}
+                renderItem={({ item }) => (
+                    <View>
+                        <Pressable>
+                            <Text>{item.name}</Text>
+                        </Pressable>
+                        {/* <FlatList
+                            data={outerItem['data'] ? outerItem['data'] : []}
+                            renderItem={({ innerItem }) => (
+                                <TouchableOpacity
+                                    onPress={() => {
+                                        navigation.navigate('Home', {
+                                            artist_id: innerItem['artistID'],
+                                        });
+                                    }}>
+                                    <View>
+                                        <Text>Inner FlatList</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            )}
+                            keyExtractor={innerItem => innerItem.id}
+                        /> */}
+                    </View>
+                )}
+            />
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({

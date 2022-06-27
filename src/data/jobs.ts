@@ -63,147 +63,193 @@ export enum JobType {
 
 /** 직업 정보 */
 export interface JobInfo {
+    id: Jobs;
     type: JobType;
 }
 
-/** 직업별 직업 정보 */
-export const info: { [key in Jobs]: JobInfo } = {
-    [Jobs['히어로']]: {
+/** 직업별 상세 정보 */
+export const jobsDetail: JobInfo[] = [
+    {
+        id: Jobs['히어로'],
         type: JobType['모험가'],
     },
-    [Jobs['팔라딘']]: {
+    {
+        id: Jobs['팔라딘'],
         type: JobType['모험가'],
     },
-    [Jobs['다크나이트']]: {
+    {
+        id: Jobs['다크나이트'],
         type: JobType['모험가'],
     },
-    [Jobs['아크메이지(불,독)']]: {
+    {
+        id: Jobs['아크메이지(불,독)'],
         type: JobType['모험가'],
     },
-    [Jobs['아크메이지(썬,콜)']]: {
+    {
+        id: Jobs['아크메이지(썬,콜)'],
         type: JobType['모험가'],
     },
-    [Jobs['비숍']]: {
+    {
+        id: Jobs['비숍'],
         type: JobType['모험가'],
     },
-    [Jobs['보우마스터']]: {
+    {
+        id: Jobs['보우마스터'],
         type: JobType['모험가'],
     },
-    [Jobs['신궁']]: {
+    {
+        id: Jobs['신궁'],
         type: JobType['모험가'],
     },
-    [Jobs['패스파인더']]: {
+    {
+        id: Jobs['패스파인더'],
         type: JobType['모험가'],
     },
-    [Jobs['나이트로드']]: {
+    {
+        id: Jobs['나이트로드'],
         type: JobType['모험가'],
     },
-    [Jobs['섀도어']]: {
+    {
+        id: Jobs['섀도어'],
         type: JobType['모험가'],
     },
-    [Jobs['듀얼블레이드']]: {
+    {
+        id: Jobs['듀얼블레이드'],
         type: JobType['모험가'],
     },
-    [Jobs['바이퍼']]: {
+    {
+        id: Jobs['바이퍼'],
         type: JobType['모험가'],
     },
-    [Jobs['캡틴']]: {
+    {
+        id: Jobs['캡틴'],
         type: JobType['모험가'],
     },
-    [Jobs['캐논슈터']]: {
+    {
+        id: Jobs['캐논슈터'],
         type: JobType['모험가'],
     },
-    [Jobs['소울마스터']]: {
+    {
+        id: Jobs['소울마스터'],
         type: JobType['시그너스'],
     },
-    [Jobs['미하일']]: {
+    {
+        id: Jobs['미하일'],
         type: JobType['시그너스'],
     },
-    [Jobs['플레임위자드']]: {
+    {
+        id: Jobs['플레임위자드'],
         type: JobType['시그너스'],
     },
-    [Jobs['윈드브레이커']]: {
+    {
+        id: Jobs['윈드브레이커'],
         type: JobType['시그너스'],
     },
-    [Jobs['나이트워커']]: {
+    {
+        id: Jobs['나이트워커'],
         type: JobType['시그너스'],
     },
-    [Jobs['스트라이커']]: {
+    {
+        id: Jobs['스트라이커'],
         type: JobType['시그너스'],
     },
-    [Jobs['블래스터']]: {
+    {
+        id: Jobs['블래스터'],
         type: JobType['레지스탕스'],
     },
-    [Jobs['배틀메이지']]: {
+    {
+        id: Jobs['배틀메이지'],
         type: JobType['레지스탕스'],
     },
-    [Jobs['와일드헌터']]: {
+    {
+        id: Jobs['와일드헌터'],
         type: JobType['레지스탕스'],
     },
-    [Jobs['메카닉']]: {
+    {
+        id: Jobs['메카닉'],
         type: JobType['레지스탕스'],
     },
-    [Jobs['제논']]: {
+    {
+        id: Jobs['제논'],
         type: JobType['레지스탕스'],
     },
-    [Jobs['데몬슬레이어']]: {
+    {
+        id: Jobs['데몬슬레이어'],
         type: JobType['데몬'],
     },
-    [Jobs['데몬어벤져']]: {
+    {
+        id: Jobs['데몬어벤져'],
         type: JobType['데몬'],
     },
-    [Jobs['아란']]: {
+    {
+        id: Jobs['아란'],
         type: JobType['영웅'],
     },
-    [Jobs['에반']]: {
+    {
+        id: Jobs['에반'],
         type: JobType['영웅'],
     },
-    [Jobs['루미너스']]: {
+    {
+        id: Jobs['루미너스'],
         type: JobType['영웅'],
     },
-    [Jobs['메르세데스']]: {
+    {
+        id: Jobs['메르세데스'],
         type: JobType['영웅'],
     },
-    [Jobs['팬텀']]: {
+    {
+        id: Jobs['팬텀'],
         type: JobType['영웅'],
     },
-    [Jobs['은월']]: {
+    {
+        id: Jobs['은월'],
         type: JobType['영웅'],
     },
-    [Jobs['카이저']]: {
+    {
+        id: Jobs['카이저'],
         type: JobType['노바'],
     },
-    [Jobs['카인']]: {
+    {
+        id: Jobs['카인'],
         type: JobType['노바'],
     },
-    [Jobs['카데나']]: {
+    {
+        id: Jobs['카데나'],
         type: JobType['노바'],
     },
-    [Jobs['엔젤릭버스터']]: {
+    {
+        id: Jobs['엔젤릭버스터'],
         type: JobType['노바'],
     },
-    [Jobs['아델']]: {
+    {
+        id: Jobs['아델'],
         type: JobType['레프'],
     },
-    [Jobs['일리움']]: {
+    {
+        id: Jobs['일리움'],
         type: JobType['레프'],
     },
-    [Jobs['아크']]: {
+    {
+        id: Jobs['아크'],
         type: JobType['레프'],
     },
-    [Jobs['라라']]: {
+    {
+        id: Jobs['라라'],
         type: JobType['아니마'],
     },
-    [Jobs['호영']]: {
+    {
+        id: Jobs['호영'],
         type: JobType['아니마'],
     },
-    [Jobs['제로']]: {
+    {
+        id: Jobs['제로'],
         type: JobType['제로'],
     },
-    [Jobs['키네시스']]: {
+    {
+        id: Jobs['키네시스'],
         type: JobType['키네시스'],
     },
-};
+];
 
 /** 스탯 정보 (주스탯, 주스탯%, 주스탯!, 부스탯, 부스탯%, 부스탯!, 공마, 공마퍼, 데미지, 보공, 최종뎀, 방무, 크확, 크뎀, 숙련도, 무기 상수) */
 export interface StatState {
