@@ -1,41 +1,43 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
-import { JobType } from 'data/jobs';
+import { JobInfo, Jobs, jobsDetail, JobType } from 'data/jobs';
 
 const SelectJob = () => {
-    const jobTypes = Object.values(JobType)
-        .filter(key => typeof JobType[key as JobType] === 'number')
-        .map(key => ({ name: key }));
-    // const jobs = Object.values(info);
+    const jobTypes = Object.values(JobType).filter(value => !isNaN(Number(value)));
+    const innerRenderItem = useCallback(({ item }: { item: JobInfo }) => {
+        return (
+            <Pressable onPress={() => {}}>
+                <Text>{Jobs[item.id]}</Text>
+            </Pressable>
+        );
+    }, []);
+    const innerKeyExtractor = useCallback((item: JobInfo) => {
+        return item.id.toString();
+    }, []);
+    const outerRenderItem = useCallback(
+        ({ item }: { item: string | JobType }) => {
+            return (
+                <View>
+                    <Pressable>
+                        <Text>{JobType[parseInt(item as string, 10)]}</Text>
+                    </Pressable>
+                    <FlatList
+                        data={jobsDetail.filter(value => value.type === parseInt(item as string, 10))}
+                        renderItem={innerRenderItem}
+                        keyExtractor={innerKeyExtractor}
+                    />
+                </View>
+            );
+        },
+        [innerKeyExtractor, innerRenderItem],
+    );
+    const outerKeyExtractor = useCallback((item: string | JobType) => {
+        return item.toString();
+    }, []);
 
     return (
         <View style={styles.background}>
-            <FlatList
-                data={jobTypes}
-                renderItem={({ item }) => (
-                    <View>
-                        <Pressable>
-                            <Text>{item.name}</Text>
-                        </Pressable>
-                        {/* <FlatList
-                            data={outerItem['data'] ? outerItem['data'] : []}
-                            renderItem={({ innerItem }) => (
-                                <TouchableOpacity
-                                    onPress={() => {
-                                        navigation.navigate('Home', {
-                                            artist_id: innerItem['artistID'],
-                                        });
-                                    }}>
-                                    <View>
-                                        <Text>Inner FlatList</Text>
-                                    </View>
-                                </TouchableOpacity>
-                            )}
-                            keyExtractor={innerItem => innerItem.id}
-                        /> */}
-                    </View>
-                )}
-            />
+            <FlatList data={jobTypes} renderItem={outerRenderItem} keyExtractor={outerKeyExtractor} />
         </View>
     );
 };
